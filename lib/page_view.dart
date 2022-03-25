@@ -24,6 +24,7 @@ class ConcentricPageView extends StatefulWidget {
   final ScrollPhysics? physics;
   final Duration duration;
   final Curve curve;
+  final Widget? buttonContent;
 
   const ConcentricPageView({
     Key? key,
@@ -42,6 +43,7 @@ class ConcentricPageView extends StatefulWidget {
     this.verticalPosition = 0.75,
     this.direction = Axis.horizontal,
 //    this.physics = const NeverScrollableScrollPhysics(),
+    this.buttonContent,
     this.physics,
     this.duration = const Duration(milliseconds: 1500),
     this.curve = Curves.easeOutSine, // Cubic(0.7, 0.5, 0.5, 0.1),
@@ -104,6 +106,7 @@ class _ConcentricPageViewState extends State<ConcentricPageView> {
                   color: _nextColor,
 //                  color: ColorTween(begin: _prevColor, end: _nextColor)
 //                      .transform(_progress), // Colors.blue,
+                  child: widget.buttonContent,
                 ),
               ),
             );
